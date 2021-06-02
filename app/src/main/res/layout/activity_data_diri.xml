@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dataDiri.DataDiriActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/back_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="0dp"
+                android:backgroundTint="@color/white"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp"
+                        app:tint="@color/biru_dasar"
+                        android:src="@drawable/ic_baseline_arrow_back" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:text="Data Diri"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_profileImage"
+                    android:layout_width="90dp"
+                    android:clickable="false"
+                    android:layout_height="90dp"
+                    android:enabled="false"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="24dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_profile"
+                    android:visibility="visible"
+                    app:civ_border_color="@color/biru_muda" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/emailInLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@color/biru_muda"
+                    android:enabled="false"
+                    android:hint="Email"
+                    android:textColorHint="@color/biru_dasar"
+                    app:boxBackgroundColor="@color/biru_muda">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/emailEdt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/namaInLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@color/biru_muda"
+                    android:enabled="false"
+                    android:hint="Nama"
+                    android:textColorHint="@color/biru_dasar"
+                    app:boxBackgroundColor="@color/biru_muda">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/namaEdt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nikInLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@color/biru_muda"
+                    android:enabled="false"
+                    android:hint="NIK"
+                    android:textColorHint="@color/biru_dasar"
+                    app:boxBackgroundColor="@color/biru_muda">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/nikEdt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/genderInLay"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@color/biru_muda"
+                    android:enabled="false"
+                    android:hint="Jenis Kelamin"
+                    android:textColorHint="@color/biru_dasar"
+                    app:boxBackgroundColor="@color/biru_muda">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/genderAuto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/alamatInLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@color/biru_muda"
+                    android:enabled="false"
+                    android:hint="Alamat Rumah"
+                    android:textColorHint="@color/biru_dasar"
+                    app:boxBackgroundColor="@color/biru_muda">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/alamatEdt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text|textMultiLine" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nohpInLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@color/biru_muda"
+                    android:enabled="false"
+                    android:hint="No HP"
+                    android:textColorHint="@color/biru_dasar"
+                    app:boxBackgroundColor="@color/biru_muda">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/nohpEdt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nowaInLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@color/biru_muda"
+                    android:enabled="false"
+                    android:hint="No WA"
+                    android:textColorHint="@color/biru_dasar"
+                    app:boxBackgroundColor="@color/biru_muda">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/nowaEdt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ahliWarisInLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@color/biru_muda"
+                    android:enabled="false"
+                    android:hint="Ahli Waris"
+                    android:textColorHint="@color/biru_dasar"
+                    app:boxBackgroundColor="@color/biru_muda">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ahliWarisEdt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/namaOutletInLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@color/biru_muda"
+                    android:enabled="false"
+                    android:hint="Nama Outlet"
+                    android:textColorHint="@color/biru_dasar"
+                    app:boxBackgroundColor="@color/biru_muda">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/namaOutletEdt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/alamatOutletInLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@color/biru_muda"
+                    android:enabled="false"
+                    android:hint="Alamat Outlet"
+                    android:textColorHint="@color/biru_dasar"
+                    app:boxBackgroundColor="@color/biru_muda">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/alamatOutletEdt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text|textMultiLine" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/editBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="24dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="24dp"
+                    android:enabled="true"
+                    android:text="EDIT" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

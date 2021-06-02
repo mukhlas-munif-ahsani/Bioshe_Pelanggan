@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/itemHome"
+        android:icon="@drawable/state_bot_nav_ic_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/itemChat"
+        android:icon="@drawable/state_bot_nav_ic_chat"
+        android:title="Chat" />
+
+    <item
+        android:id="@+id/itemCart"
+        android:title="Keranjang" />
+
+    <item
+        android:id="@+id/itemTransaksi"
+        android:icon="@drawable/state_bot_nav_ic_transaksi"
+        android:title="Transaksi" />
+
+    <item
+        android:id="@+id/itemAkun"
+        android:icon="@drawable/state_bot_nav_ic_akun"
+        android:title="Akun" />
+</menu>

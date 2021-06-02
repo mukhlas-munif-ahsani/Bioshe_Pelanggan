@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">BIOSHE</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nama_transfer_bank">ATM/Transfer Bank</string>
+    <string name="desc_transfer_bank">Bayar dari ATM Bersama,Prima atau Alto</string>
+    <string name="nama_gopay">GoPay</string>
+    <string name="desc_gopay">Bayar dengan dengan dompet GoPay anda</string>
+    <string name="nama_shopee">ShoopePay</string>
+    <string name="desc_shopee">Bayar dengan Dompet ShopeePay</string>
+    <string name="nama_bca">BCA KlikPay</string>
+    <string name="desc_bca">Bayar dengan BCA KlikPay</string>
+    <string name="nama_cimb">CIMBS Clicks</string>
+    <string name="desc_cimb">Bayar dengan akun CIMB Clicks</string>
+    <string name="nama_danamon">Danamon Onlice Banking</string>
+    <string name="desc_danamon">Bayar dengan Akun Danamon Online Banking</string>
+    <string name="nama_indomart">Indomart</string>
+    <string name="desc_indomart">Bayar dari Indomart</string>
+    <string name="nama_alfamart">Alfamart</string>
+    <string name="desc_alfamart">Bayar dari Alfamart, Alfamidi, atau Dan+Dan outlet</string>
+    <string name="nama_akulaku">Akulaku</string>
+    <string name="desc_akulaku">Bayar dengan akun Akulaku anda</string>
+
+    <string name="default_notification_channel_id">Asan_CH_01</string>
+
+</resources>

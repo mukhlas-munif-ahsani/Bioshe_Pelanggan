@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="biru_dasar">#118EEA</color>
+    <color name="biru_muda">#D7EDFE</color>
+    <color name="grey">#B8CCDC</color>
+    <color name="kuning">#F8BE01</color>
+    <color name="merah">#FF4C57</color>
+    <color name="merah_muda">#FFC1C1</color>
+    <color name="putih_abu_abu">#F5F5F5</color>
+    <color name="biru_muda2">#B7DDF9</color>
+    <color name="orange">#EA5411</color>
+    <color name="orangeMuda">#FADBCE</color>
+
+    <color name="silver">#B2B3B2</color>
+    <color name="gold">#FFC54C</color>
+    <color name="platinum">#7F7F7F</color>
+    <color name="diamond">#4CB2FE</color>
+
+    <color name="silver_muda">#F9F9F9</color>
+    <color name="gold_muda">#FFFAF1</color>
+    <color name="platinum_muda">#F5F5F5</color>
+    <color name="diamond_muda">#F1F9FF</color>
+</resources>

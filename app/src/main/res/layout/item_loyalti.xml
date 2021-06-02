@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="8dp"
+    android:paddingStart="4dp"
+    android:paddingEnd="4dp"
+    android:paddingTop="4dp"
+    android:id="@+id/loyaltiCard"
+    app:cardBackgroundColor="#FFC54C"
+    android:layout_height="190dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/loyalti_card_bg"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:id="@+id/medalIcon"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/gold_ic"
+            android:layout_marginEnd="14dp"
+            android:layout_marginTop="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/loyaltiAnda"
+            android:layout_marginTop="18dp"
+            android:layout_marginStart="14dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="Loyalti Anda"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/loyaltiSaatIni"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="14dp"
+            android:layout_below="@id/loyaltiAnda"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:textColor="@color/white"
+            android:text="Loyalti Saat ini"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/black_transparent" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
