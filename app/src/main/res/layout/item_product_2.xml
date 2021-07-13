@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="295dp"
+    android:layout_height="330dp"
     android:id="@+id/product"
     android:clickable="true"
     android:focusable="true"
@@ -41,10 +41,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="top"
             android:id="@+id/linDiscon"
-            android:layout_above="@+id/priceTxt"
+            android:layout_above="@+id/stokTxt"
             android:layout_marginStart="8dp"
             android:visibility="visible"
-            android:layout_marginBottom="4dp"
+            android:layout_marginBottom="0dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="8dp"
             android:elevation="0dp"
@@ -98,6 +98,19 @@
             </LinearLayout>
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/stokTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/priceTxt"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="0dp"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:alpha="0.7"
+            android:text="Stok 0"
+            android:textSize="10sp" />
 
         <TextView
             android:id="@+id/priceTxt"

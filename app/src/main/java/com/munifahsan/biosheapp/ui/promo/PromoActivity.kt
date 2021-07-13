@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.munifahsan.biosheapp.R
 import com.munifahsan.biosheapp.databinding.ActivityPromoBinding
@@ -36,6 +37,9 @@ class PromoActivity : AppCompatActivity(), PromoContract.View {
         .collection("PROMO")
     var promoId = ""
 
+    private lateinit var auth: FirebaseAuth
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPromoBinding.inflate(layoutInflater)
@@ -43,7 +47,7 @@ class PromoActivity : AppCompatActivity(), PromoContract.View {
         setContentView(view)
 
         mPres = PromoPresenter(this)
-
+        auth = FirebaseAuth.getInstance()
         promoId = intent.getStringExtra("PROMO_ID").toString()
 
         getData(promoId)
@@ -184,6 +188,21 @@ class PromoActivity : AppCompatActivity(), PromoContract.View {
                 startDetailProductActivity(productId)
             }
         }
+
+        fun setStok(itemId: String) {
+            Constants.USER_DB.document(auth.uid.toString()).get().addOnSuccessListener {
+                if (it.exists()) {
+                    Constants.DISTRIBUTOR_DB.document(it.getString("distributorId").toString())
+                        .collection("STOK_PRODUK").document(itemId)
+                        .get().addOnSuccessListener { dis ->
+                            if (dis.exists()) {
+                                val textView = view.findViewById<TextView>(R.id.stokTxt)
+                                textView.text = "Stok ${dis.getLong("stok")!!.toInt()}"
+                            }
+                        }
+                }
+            }
+        }
     }
 
     private inner class ProductPromoFirestoreRecyclerAdapter(options: FirestoreRecyclerOptions<Product>) :
@@ -204,6 +223,7 @@ class PromoActivity : AppCompatActivity(), PromoContract.View {
                 productModel.diskon
             )
             productViewHolder.setClickableView(productModel.id)
+            productViewHolder.setStok(productModel.id)
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {

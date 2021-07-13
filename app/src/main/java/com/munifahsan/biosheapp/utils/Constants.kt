@@ -45,7 +45,7 @@ class Constants {
         val PRODUK_DB = FirebaseFirestore.getInstance()
             .collection("PRODUCT")
         val TAGIHAN_DB = FirebaseFirestore.getInstance()
-            .collection("USERS").document(Firebase.auth.currentUser!!.uid).collection("TAGIHAN")
+            .collection("USERS").document(CURRENT_USER_ID.toString()).collection("TAGIHAN")
         val PAYMENT_HISTORY_DB = FirebaseFirestore.getInstance()
             .collection("PAYMENT_HISTORY")
     }

@@ -46,7 +46,6 @@ class ChatRoomActivity : AppCompatActivity() {
     private var chatRoomId: String = ""
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityChatRoomBinding.inflate(layoutInflater)
@@ -69,7 +68,6 @@ class ChatRoomActivity : AppCompatActivity() {
                 finish()
             }
         }
-        //showMessage(friendId.toString())
     }
 
     private fun getData(chatRoomId: String) {

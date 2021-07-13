@@ -32,6 +32,7 @@ import com.munifahsan.biosheapp.databinding.FragmentHomeBinding
 import com.munifahsan.biosheapp.ui.keranjang.CartActivity
 import com.munifahsan.biosheapp.ui.tagihan.TagihanActivity
 import com.munifahsan.biosheapp.utils.CheckConection
+import com.munifahsan.biosheapp.utils.Constants
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderView
@@ -208,7 +209,8 @@ class HomeFragment : Fragment(), HomeContract.View {
         binding.jumlahTagihan.visibility = View.INVISIBLE
         binding.tagihanShimmer.visibility = View.VISIBLE
 
-        dbUsers.document(auth.currentUser!!.uid).collection("TAGIHAN").whereEqualTo("dibayar", false)
+        dbUsers.document(auth.currentUser!!.uid).collection("TAGIHAN")
+            .whereEqualTo("dibayar", false)
             .addSnapshotListener { value, error ->
                 val tagihan = ArrayList<Int>()
                 if (value != null) {
@@ -357,6 +359,21 @@ class HomeFragment : Fragment(), HomeContract.View {
                 startDetailProductActivity(productId)
             }
         }
+
+        fun setStok(itemId: String) {
+            Constants.USER_DB.document(auth.uid.toString()).get().addOnSuccessListener {
+                if (it.exists()) {
+                    Constants.DISTRIBUTOR_DB.document(it.getString("distributorId").toString())
+                        .collection("STOK_PRODUK").document(itemId)
+                        .get().addOnSuccessListener { dis ->
+                            if (dis.exists()) {
+                                val textView = view.findViewById<TextView>(R.id.stokTxt)
+                                textView.text = "Stok ${dis.getLong("stok")!!.toInt()}"
+                            }
+                        }
+                }
+            }
+        }
     }
 
     private inner class ProductFirestoreRecyclerAdapter(options: FirestoreRecyclerOptions<Product>) :
@@ -377,6 +394,7 @@ class HomeFragment : Fragment(), HomeContract.View {
                 productModel.diskon
             )
             productViewHolder.setClickableView(productModel.id)
+            productViewHolder.setStok(productModel.id)
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
@@ -407,6 +425,7 @@ class HomeFragment : Fragment(), HomeContract.View {
                 productModel.diskon
             )
             productViewHolder.setClickableView(productModel.id)
+            productViewHolder.setStok(productModel.id)
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {

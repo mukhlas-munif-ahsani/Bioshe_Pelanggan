@@ -108,7 +108,7 @@ class ChatFragment : Fragment() {
             to: String,
             toName: String,
             toPhoto: String,
-            peakMessage: String,
+            idMessage: String,
             updated: Timestamp?
         ) {
             val photo = view.findViewById<ImageView>(R.id.photoChatList)
@@ -128,7 +128,6 @@ class ChatFragment : Fragment() {
                 if (to != auth.currentUser!!.uid) {
                     navigateToChatRoom(to)
                 }
-
             }
 
             if (from != auth.currentUser!!.uid) {
@@ -271,7 +270,7 @@ class ChatFragment : Fragment() {
                 }
             }
 
-            dbChatRoom.document(id).collection("CHAT").document(peakMessage)
+            dbChatRoom.document(id).collection("CHAT").document(idMessage)
                 .addSnapshotListener { value, error ->
                     if (value != null) {
                         peakMessages.text = value.getString("message")
